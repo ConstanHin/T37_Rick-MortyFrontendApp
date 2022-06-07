@@ -1,30 +1,31 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { CharactersViewModule } from './characters-view/characters-view.module';
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { CharactersViewComponent } from './characters/characters-view/characters-view.component';
-import { HomeComponent } from './home/home.component';
 import { HomeCompComponent } from './home-comp/home-comp.component';
+import { CharactersViewComponent } from './characters-view/characters-view/characters-view.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CharactersViewComponent,
-    HomeComponent,
-    HomeCompComponent
+    HomeCompComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CharactersViewModule,
     RouterModule.forRoot([
-      // {path: '/', component: CrisisListComponent},
+      {path: '', component: HomeCompComponent},
       {path: 'characters', component: CharactersViewComponent},
-      // {path: 'about', component: HeroesListComponent},
+      {path: 'about', component: AboutComponent},
     ]),
   ],
   providers: [],
